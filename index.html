@@ -8,23 +8,15 @@
 
 <script>
 function getPrice(number) {
-    var value = Number(Math.round(num * 100)/100);      
-    var res = num.split(".");     
-    if(res.length == 1) { 
-        value = value + ".00";
-    } else if (res[1].length < 3) {
-        value = value + "0";
+    if (number - Math.round(number) == 0) {
+        return (Math.round(number * 100) / 100) + ".00";
+    } else if ((Math.round(number * 10)) - Math.round(number) * 10 == 0) {
+        return (Math.round(number * 100) / 100) + "0";
+    } else if ((Math.round(number * 10)) - number * 10 == 0) {
+        return (Math.round(number * 100) / 100) + "0";
+    } else {
+        return (Math.round(number * 100) / 100);
     }
-return value;
-    // if (number - Math.round(number) == 0) {
-    //     return (Math.round(number * 100) / 100) + ".00";
-    // } else if ((Math.round(number * 10)) - Math.round(number) * 10 == 0) {
-    //     return (Math.round(number * 100) / 100) + "0";
-    // } else if ((Math.round(number * 10)) - number * 10 == 0) {
-    //     return (Math.round(number * 100) / 100) + "0";
-    // } else {
-    //     return (Math.round(number * 100) / 100);
-    // }
 }
 var hotdog = 3.75;
 var fries = 3;
